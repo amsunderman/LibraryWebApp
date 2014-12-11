@@ -1,0 +1,5 @@
+_assetic:
+    resource: .
+    type: assetic
+_app:
+    resource: 'C:/wamp/www/319/portfolio3/LibraryWebApp/app/config/routing_dev.yml'
