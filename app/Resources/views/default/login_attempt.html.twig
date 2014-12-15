@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <p>
+		<form name="login_attempt" action="{{ path('login_validate', {'page': 'login_validate'}) }}" method="post">
+			Username: <input type="text" name="username"><br>
+			Password: <input type="password" name="password"><br>
+			<input type="submit" value="Login">
+		</form>
+	</p>
+{% endblock %}
+

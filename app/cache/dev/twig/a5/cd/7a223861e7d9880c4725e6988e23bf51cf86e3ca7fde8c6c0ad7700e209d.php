@@ -28,7 +28,7 @@ class __TwigTemplate_a5cd7a223861e7d9880c4725e6988e23bf51cf86e3ca7fde8c6c0ad7700
     public function block_body($context, array $blocks = array())
     {
         // line 4
-        echo "    Homepage.
+        echo "    Homepage2jojoijojo.
 ";
     }
 

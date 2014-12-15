@@ -28,22 +28,41 @@ class __TwigTemplate_660f8f7ac55a499f6940452b3cdca8b11a727c5a6fd6b31f3de801fdde5
         // line 5
         $this->displayBlock('title', $context, $blocks);
         echo "</title>
-        ";
-        // line 6
-        $this->displayBlock('stylesheets', $context, $blocks);
+        <link rel=\"stylesheet\" href=\"//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css\">
+        <link href=\"";
         // line 7
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("css/bootstrapOverrides.css"), "html", null, true);
+        echo "\" rel=\"stylesheet\" type=\"text/css\" />
+        <link href=\"";
+        // line 8
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("css/main.css"), "html", null, true);
+        echo "\" rel=\"stylesheet\" type=\"text/css\" />
+
+        ";
+        // line 10
+        $this->displayBlock('stylesheets', $context, $blocks);
+        // line 11
         echo "        <link rel=\"icon\" type=\"image/x-icon\" href=\"";
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("favicon.ico"), "html", null, true);
         echo "\" />
     </head>
     <body>
+        <div>
+            <h1>Library Web App</h1>
+        </div>
+        <div>
+            <p>librarian</p>
+            <p>
+                <a href=\"../User/logout.php\"> Logout </a>
+            </p>
+        </div>
         ";
-        // line 10
+        // line 23
         $this->displayBlock('body', $context, $blocks);
-        // line 11
+        // line 24
         echo "        ";
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 12
+        // line 25
         echo "    </body>
 </html>
 ";
@@ -55,17 +74,17 @@ class __TwigTemplate_660f8f7ac55a499f6940452b3cdca8b11a727c5a6fd6b31f3de801fdde5
         echo "Welcome!";
     }
 
-    // line 6
+    // line 10
     public function block_stylesheets($context, array $blocks = array())
     {
     }
 
-    // line 10
+    // line 23
     public function block_body($context, array $blocks = array())
     {
     }
 
-    // line 11
+    // line 24
     public function block_javascripts($context, array $blocks = array())
     {
     }
@@ -82,6 +101,6 @@ class __TwigTemplate_660f8f7ac55a499f6940452b3cdca8b11a727c5a6fd6b31f3de801fdde5
 
     public function getDebugInfo()
     {
-        return array (  69 => 11,  64 => 10,  59 => 6,  53 => 5,  47 => 12,  44 => 11,  42 => 10,  35 => 7,  33 => 6,  29 => 5,  23 => 1,);
+        return array (  88 => 24,  83 => 23,  78 => 10,  72 => 5,  66 => 25,  63 => 24,  61 => 23,  45 => 11,  43 => 10,  38 => 8,  34 => 7,  29 => 5,  23 => 1,);
     }
 }

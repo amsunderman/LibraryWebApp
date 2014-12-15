@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <p>
+		<a href="{{ path('login', {'page': 'login'}) }}"> Login </a>
+	</p>
+	<p>
+		<a href="{{ path('signup', {'page': 'signup'}) }}"> Sign Up! </a>
+	</p>
+{% endblock %}
+
