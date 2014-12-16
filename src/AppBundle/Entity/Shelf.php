@@ -29,9 +29,9 @@ class Shelf
     /**
      * @var integer
      *
-     * @ORM\Id @ORM\Column(name="Copyid", type="integer")
+     * @ORM\Column(name="Numbooks", type="integer")
      */
-    private $copyid;
+    private $numbooks;
 
     /**
      * Set groupnumber
@@ -80,25 +80,25 @@ class Shelf
     }
 
     /**
-     * Set copyid
+     * Set numbooks
      *
-     * @param integer $copyid
+     * @param integer $numbooks
      * @return Shelf
      */
-    public function setCopyid($copyid)
+    public function setNumbooks($numbooks)
     {
-        $this->copyid = $copyid;
+        $this->numbooks = $numbooks;
 
         return $this;
     }
 
     /**
-     * Get copyid
+     * Get numbooks
      *
      * @return integer
      */
-    public function getCopyid()
+    public function getNumbooks()
     {
-        return $this->copyid;
+        return $this->numbooks;
     }
 }

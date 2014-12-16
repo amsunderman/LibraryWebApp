@@ -43,12 +43,12 @@ class Book
     /**
      * Set groupnumber
      *
-     * @param integer $groupnumber
+     * @param integer $Groupnumber
      * @return Book
      */
-    public function setGroupnumber($groupnumber)
+    public function setGroupnumber($Groupnumber)
     {
-        $this->groupnumber = $groupnumber;
+        $this->Groupnumber = $Groupnumber;
 
         return $this;
     }
@@ -60,7 +60,7 @@ class Book
      */
     public function getGroupnumber()
     {
-        return $this->groupnumber;
+        return $this->Groupnumber;
     }
 
     /**

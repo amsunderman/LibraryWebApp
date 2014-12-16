@@ -136,24 +136,62 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::indexAction',  '_route' => 'homepage',);
         }
 
+        // loadLibrary
+        if ($pathinfo === '/loadLibrary') {
+            return array (  '_controller' => 'AppBundle\\Controller\\LibraryController::loadLibrary',  '_route' => 'loadLibrary',);
+        }
+
+        if (0 === strpos($pathinfo, '/get')) {
+            // getTitle
+            if ($pathinfo === '/getTitle') {
+                return array (  '_controller' => 'AppBundle\\Controller\\LibraryController::getTitle',  '_route' => 'getTitle',);
+            }
+
+            // getBookDetails
+            if ($pathinfo === '/getBookDetails') {
+                return array (  '_controller' => 'AppBundle\\Controller\\LibraryController::getBookDetails',  '_route' => 'getBookDetails',);
+            }
+
+        }
+
+        // addBook
+        if ($pathinfo === '/addBook') {
+            return array (  '_controller' => 'AppBundle\\Controller\\LibraryController::addBook',  '_route' => 'addBook',);
+        }
+
+        // deleteBook
+        if ($pathinfo === '/deleteBook') {
+            return array (  '_controller' => 'AppBundle\\Controller\\LibraryController::deleteBook',  '_route' => 'deleteBook',);
+        }
+
+        // checkoutBook
+        if ($pathinfo === '/checkoutBook') {
+            return array (  '_controller' => 'AppBundle\\Controller\\LibraryController::checkoutBook',  '_route' => 'checkoutBook',);
+        }
+
         // login
         if ($pathinfo === '/login') {
-            return array (  '_controller' => 'AppBundle\\Controller\\User\\UserController::login',  '_route' => 'login',);
+            return array (  '_controller' => 'AppBundle\\Controller\\UserController::login',  '_route' => 'login',);
         }
 
         // signup
         if ($pathinfo === '/signup') {
-            return array (  '_controller' => 'AppBundle\\Controller\\User\\UserController::signup',  '_route' => 'signup',);
+            return array (  '_controller' => 'AppBundle\\Controller\\UserController::signup',  '_route' => 'signup',);
         }
 
         // login_validate
         if ($pathinfo === '/login_validate') {
-            return array (  '_controller' => 'AppBundle\\Controller\\User\\UserController::login_validate',  '_route' => 'login_validate',);
+            return array (  '_controller' => 'AppBundle\\Controller\\UserController::login_validate',  '_route' => 'login_validate',);
         }
 
         // signup_validate
         if ($pathinfo === '/signup_validate') {
-            return array (  '_controller' => 'AppBundle\\Controller\\User\\UserController::signup_validate',  '_route' => 'signup_validate',);
+            return array (  '_controller' => 'AppBundle\\Controller\\UserController::signup_validate',  '_route' => 'signup_validate',);
+        }
+
+        // logout
+        if ($pathinfo === '/logout') {
+            return array (  '_controller' => 'AppBundle\\Controller\\UserController::logout',  '_route' => 'logout',);
         }
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();

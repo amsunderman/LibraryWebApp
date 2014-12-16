@@ -1,0 +1,73 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+	{# Book Details #}
+	<table border="1">
+	<tr>
+		<td>
+			Book ID
+		</td>
+		<td>
+			{{book.getBookid()}}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			Copy ID
+		</td>
+		<td>
+			{{copyid}}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			Title
+		</td>
+		<td>
+			{{book.getBooktitle()}}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			Author
+		</td>
+		<td>
+			{{book.getAuthor()}}
+		</td>
+	</tr>
+
+	{# if user is a librarian, they have option to delete book #}
+	{% if app.session.get('user').getLibrarian() %}
+		<a href="{{path('deleteBook', {'bookid': book.getBookid()})}}">
+			Delete Book
+		</a>
+
+	{# if the user is a student they will be able to participate in checkout out books #}
+	{% else %}
+		{# if the books is loaned out by the student they will be able to return it
+		   if it is checked out by someone else it will inform user the book has already
+		   been checked out #}
+		{% if loaned_out %}
+			{% if loaned_out_by_me %}
+				<a href="{{path('returnBook', {'copyid': copyid})}}">
+					Return Book
+				</a>
+			{% else %}
+				Checked Out
+			{% endif %}
+		{# If the book is available, the student will be able to checkout the book #}
+		{% else %}
+			<a href="{{path('checkoutBook', {'copyid': copyid})}}">
+				Burrow Book
+			</a>
+		{% endif %}
+	{% endif %}
+
+	<br>
+
+	{# link to go back to the library #}
+	<a href="{{path('homepage')}}">Back to Library</a>
+
+
+{% endblock %}

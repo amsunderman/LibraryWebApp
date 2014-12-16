@@ -28,7 +28,9 @@ class __TwigTemplate_807a8c43718213d6f1f790c72df8e48c7a8db775a7b90fe6c3ffbd37904
     public function block_body($context, array $blocks = array())
     {
         // line 4
-        echo "    homepage.
+        echo "    ";
+        echo $this->env->getExtension('http_kernel')->renderFragment($this->env->getExtension('routing')->getUrl("loadLibrary"));
+        echo "
 ";
     }
 

@@ -4,6 +4,7 @@
         <meta charset="UTF-8" />
         <title>{% block title %}Welcome!{% endblock %}</title>
         <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+        {# import bootstrap styles #}
         <link href="{{ asset('css/bootstrapOverrides.css') }}" rel="stylesheet" type="text/css" />
         <link href="{{ asset('css/main.css') }}" rel="stylesheet" type="text/css" />
 
@@ -11,9 +12,25 @@
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
+        {# library web app banner #}
         <div class = "jumbotron">
             <h1>Library Web App</h1>
+            {% if app.session.has('user') %}
+                <p class="user_info">
+                    {{app.session.get('user').getUsername()}}
+                    {% if app.session.get('user').getLibrarian() %}
+                         (librarian)
+                    {% else %}
+                         (student)
+                    {% endif %}
+                </p>
+                <p class="user_info">
+                    <a href="{{path('logout')}}">logout</a>
+                </p>
+            {% endif %}
         </div>
+
+        {# body (this twig is extended) #}
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
     </body>

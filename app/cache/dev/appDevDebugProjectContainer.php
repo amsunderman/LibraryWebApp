@@ -51,11 +51,11 @@ class appDevDebugProjectContainer extends Container
             'kernel.charset' => 'UTF-8',
             'kernel.container_class' => 'appDevDebugProjectContainer',
             'database_driver' => 'mysqli',
-            'database_host' => '127.0.0.1',
+            'database_host' => 'www.amsunderman.com',
             'database_port' => '3306',
             'database_name' => 'db319all',
-            'database_user' => 'root',
-            'database_password' => NULL,
+            'database_user' => 'group31',
+            'database_password' => 'group31',
             'mailer_transport' => 'smtp',
             'mailer_host' => '127.0.0.1',
             'mailer_user' => NULL,
@@ -192,7 +192,7 @@ class appDevDebugProjectContainer extends Container
             'validator.expression.class' => 'Symfony\\Component\\Validator\\Constraints\\ExpressionValidator',
             'validator.email.class' => 'Symfony\\Component\\Validator\\Constraints\\EmailValidator',
             'validator.translation_domain' => 'validators',
-            'validator.api' => 3,
+            'validator.api' => 1,
             'fragment.listener.class' => 'Symfony\\Component\\HttpKernel\\EventListener\\FragmentListener',
             'form.resolved_type_factory.data_collector_proxy.class' => 'Symfony\\Component\\Form\\Extension\\DataCollector\\Proxy\\ResolvedTypeFactoryDataCollectorProxy',
             'form.type_extension.form.data_collector.class' => 'Symfony\\Component\\Form\\Extension\\DataCollector\\Type\\DataCollectorTypeExtension',
@@ -1283,7 +1283,7 @@ class appDevDebugProjectContainer extends Container
         $b = new \Doctrine\DBAL\Configuration();
         $b->setSQLLogger($a);
 
-        return $this->services['doctrine.dbal.default_connection'] = $this->get('doctrine.dbal.connection_factory')->createConnection(array('driver' => 'mysqli', 'host' => '127.0.0.1', 'port' => '3306', 'dbname' => 'db319all', 'user' => 'root', 'password' => NULL, 'charset' => 'UTF8', 'driverOptions' => array()), $b, new \Symfony\Bridge\Doctrine\ContainerAwareEventManager($this), array('bit' => 'boolean'));
+        return $this->services['doctrine.dbal.default_connection'] = $this->get('doctrine.dbal.connection_factory')->createConnection(array('driver' => 'mysqli', 'host' => 'www.amsunderman.com', 'port' => '3306', 'dbname' => 'db319all', 'user' => 'group31', 'password' => 'group31', 'charset' => 'UTF8', 'driverOptions' => array()), $b, new \Symfony\Bridge\Doctrine\ContainerAwareEventManager($this), array('bit' => 'boolean'));
     }
 
     /**
@@ -3944,7 +3944,7 @@ class appDevDebugProjectContainer extends Container
         $instance->addXmlMappings(array(0 => (dirname(dirname(dirname(__DIR__))).'\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Form/Resources/config/validation.xml')));
         $instance->enableAnnotationMapping($this->get('annotation_reader'));
         $instance->addMethodMapping('loadValidatorMetadata');
-        $instance->setApiVersion(3);
+        $instance->setApiVersion(1);
         $instance->addObjectInitializers(array(0 => $this->get('doctrine.orm.validator_initializer')));
 
         return $instance;

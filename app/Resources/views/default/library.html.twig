@@ -1,0 +1,43 @@
+{% block body %}
+
+    {# table representing library #}
+	<table border="1">
+	<tr>
+		{% for i in 1..10 %}
+			<td>Shelf {{i}}</td>
+		{% endfor %}
+	</tr>
+
+    {# read the book_matrix (10 by 10) from the session #}
+	{% set book_matrix = app.session.get('book_matrix') %}
+
+    {# loop through and display books currently in library #}
+    {% for i in 1..10 %}
+    	<tr>
+    		{% for j in 1..10 %}
+    			<td>
+    				{% if book_matrix[j][i] is defined %}
+    					<a href="{{path('getBookDetails', {'bookid': book_matrix[j][i].getBookid(), 'copyid' : book_matrix[j][i].getCopyid()})}}">
+    						{{app.session.set('bookid', book_matrix[j][i].getBookid())}}
+    						{{render(path('getTitle'))}}
+    					</a>
+    				{% else %}
+    					...
+    				{% endif %}
+    			</td>
+    		{% endfor %}
+    	</tr>
+    {% endfor %}
+
+    {# if user is a librarian, they can add a book via a form #}
+    {% if app.session.get('user').getLibrarian() %}
+    	<form name="addbook" action="{{path('addBook')}}" method="post">
+			Book ID: <input type="text" name="bookid"><br>
+			Book Name: <input type="text" name="name"><br>
+			Book Author: <input type="text" name="author"><br>
+			Number Copies: <input type="text" name="numcopies"><br>
+			<input type="submit" value="Add Book">
+		</form>
+    {% endif %}
+
+{% endblock %}

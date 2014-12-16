@@ -15,6 +15,7 @@ class DefaultController extends Controller
     {
         $session = new Session();
 
+        //if session has a user go to home page, else login page
     	if($session->has('user'))
     	{
     		return $this->render('default/home.html.twig');

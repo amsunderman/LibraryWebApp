@@ -2,9 +2,12 @@
 
 {% block body %}
     <p>
+    	{# if there is a validation error, display it #}
     	{% if error is defined %}
     		<p class="error_message">{{error}}</p>
     	{% endif %}
+
+    	{# user registers via form #}
 		<form name="login_attempt" action="{{ path('signup_validate') }}" method="post">
 			Username: <input type="text" name="username"><br>
 			Password: <input type="password" name="password"><br>

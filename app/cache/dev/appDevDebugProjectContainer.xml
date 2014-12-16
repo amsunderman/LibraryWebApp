@@ -25,11 +25,11 @@
     <parameter key="kernel.charset">UTF-8</parameter>
     <parameter key="kernel.container_class">appDevDebugProjectContainer</parameter>
     <parameter key="database_driver">mysqli</parameter>
-    <parameter key="database_host">127.0.0.1</parameter>
+    <parameter key="database_host">www.amsunderman.com</parameter>
     <parameter key="database_port">3306</parameter>
     <parameter key="database_name">db319all</parameter>
-    <parameter key="database_user">root</parameter>
-    <parameter key="database_password">null</parameter>
+    <parameter key="database_user">group31</parameter>
+    <parameter key="database_password">group31</parameter>
     <parameter key="mailer_transport">smtp</parameter>
     <parameter key="mailer_host">127.0.0.1</parameter>
     <parameter key="mailer_user">null</parameter>
@@ -162,7 +162,7 @@
     <parameter key="validator.expression.class">Symfony\Component\Validator\Constraints\ExpressionValidator</parameter>
     <parameter key="validator.email.class">Symfony\Component\Validator\Constraints\EmailValidator</parameter>
     <parameter key="validator.translation_domain">validators</parameter>
-    <parameter key="validator.api">3</parameter>
+    <parameter key="validator.api">1</parameter>
     <parameter key="fragment.listener.class">Symfony\Component\HttpKernel\EventListener\FragmentListener</parameter>
     <parameter key="form.resolved_type_factory.data_collector_proxy.class">Symfony\Component\Form\Extension\DataCollector\Proxy\ResolvedTypeFactoryDataCollectorProxy</parameter>
     <parameter key="form.type_extension.form.data_collector.class">Symfony\Component\Form\Extension\DataCollector\Type\DataCollectorTypeExtension</parameter>
@@ -1360,7 +1360,7 @@
         <argument>loadValidatorMetadata</argument>
       </call>
       <call method="setApiVersion">
-        <argument>3</argument>
+        <argument>1</argument>
       </call>
       <call method="addObjectInitializers">
         <argument type="collection">
@@ -2444,11 +2444,11 @@
     <service id="doctrine.dbal.default_connection" class="Doctrine\DBAL\Connection" factory-method="createConnection" factory-service="doctrine.dbal.connection_factory">
       <argument type="collection">
         <argument key="driver">mysqli</argument>
-        <argument key="host">127.0.0.1</argument>
+        <argument key="host">www.amsunderman.com</argument>
         <argument key="port">3306</argument>
         <argument key="dbname">db319all</argument>
-        <argument key="user">root</argument>
-        <argument key="password">null</argument>
+        <argument key="user">group31</argument>
+        <argument key="password">group31</argument>
         <argument key="charset">UTF8</argument>
         <argument key="driverOptions" type="collection"/>
       </argument>

@@ -49,14 +49,45 @@ class __TwigTemplate_660f8f7ac55a499f6940452b3cdca8b11a727c5a6fd6b31f3de801fdde5
     <body>
         <div class = \"jumbotron\">
             <h1>Library Web App</h1>
-        </div>
+            ";
+        // line 16
+        if ($this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "session", array()), "has", array(0 => "user"), "method")) {
+            // line 17
+            echo "                <p class=\"user_info\">
+                    ";
+            // line 18
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "session", array()), "get", array(0 => "user"), "method"), "getUsername", array(), "method"), "html", null, true);
+            echo "
+                    ";
+            // line 19
+            if ($this->getAttribute($this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "session", array()), "get", array(0 => "user"), "method"), "getLibrarian", array(), "method")) {
+                // line 20
+                echo "                         (librarian)
+                    ";
+            } else {
+                // line 22
+                echo "                         (student)
+                    ";
+            }
+            // line 24
+            echo "                </p>
+                <p class=\"user_info\">
+                    <a href=\"";
+            // line 26
+            echo $this->env->getExtension('routing')->getPath("logout");
+            echo "\">logout</a>
+                </p>
+            ";
+        }
+        // line 29
+        echo "        </div>
         ";
-        // line 17
+        // line 30
         $this->displayBlock('body', $context, $blocks);
-        // line 18
+        // line 31
         echo "        ";
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 19
+        // line 32
         echo "    </body>
 </html>
 ";
@@ -73,12 +104,12 @@ class __TwigTemplate_660f8f7ac55a499f6940452b3cdca8b11a727c5a6fd6b31f3de801fdde5
     {
     }
 
-    // line 17
+    // line 30
     public function block_body($context, array $blocks = array())
     {
     }
 
-    // line 18
+    // line 31
     public function block_javascripts($context, array $blocks = array())
     {
     }
@@ -95,6 +126,6 @@ class __TwigTemplate_660f8f7ac55a499f6940452b3cdca8b11a727c5a6fd6b31f3de801fdde5
 
     public function getDebugInfo()
     {
-        return array (  82 => 18,  77 => 17,  72 => 10,  66 => 5,  60 => 19,  57 => 18,  55 => 17,  45 => 11,  43 => 10,  38 => 8,  34 => 7,  29 => 5,  23 => 1,);
+        return array (  113 => 31,  108 => 30,  103 => 10,  97 => 5,  91 => 32,  88 => 31,  86 => 30,  83 => 29,  77 => 26,  73 => 24,  69 => 22,  65 => 20,  63 => 19,  59 => 18,  56 => 17,  54 => 16,  45 => 11,  43 => 10,  38 => 8,  34 => 7,  29 => 5,  23 => 1,);
     }
 }
