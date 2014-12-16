@@ -137,18 +137,23 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
         }
 
         // login
-        if (preg_match('#^/(?P<page>[^/]++)$#s', $pathinfo, $matches)) {
-            return $this->mergeDefaults(array_replace($matches, array('_route' => 'login')), array (  '_controller' => 'AppBundle\\Controller\\DefaultController::login',));
-        }
-
-        // login_validate
-        if (preg_match('#^/(?P<page>[^/]++)$#s', $pathinfo, $matches)) {
-            return $this->mergeDefaults(array_replace($matches, array('_route' => 'login_validate')), array (  '_controller' => 'AppBundle\\Controller\\DefaultController::login_validate',));
+        if ($pathinfo === '/login') {
+            return array (  '_controller' => 'AppBundle\\Controller\\User\\UserController::login',  '_route' => 'login',);
         }
 
         // signup
-        if (preg_match('#^/(?P<page>[^/]++)$#s', $pathinfo, $matches)) {
-            return $this->mergeDefaults(array_replace($matches, array('_route' => 'signup')), array (  '_controller' => 'AppBundle\\Controller\\DefaultController::signup',));
+        if ($pathinfo === '/signup') {
+            return array (  '_controller' => 'AppBundle\\Controller\\User\\UserController::signup',  '_route' => 'signup',);
+        }
+
+        // login_validate
+        if ($pathinfo === '/login_validate') {
+            return array (  '_controller' => 'AppBundle\\Controller\\User\\UserController::login_validate',  '_route' => 'login_validate',);
+        }
+
+        // signup_validate
+        if ($pathinfo === '/signup_validate') {
+            return array (  '_controller' => 'AppBundle\\Controller\\User\\UserController::signup_validate',  '_route' => 'signup_validate',);
         }
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();

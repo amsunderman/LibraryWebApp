@@ -31,13 +31,13 @@ class __TwigTemplate_13e2233048a42714f095083170f343573830d0bc6753122a1c49e7d7286
         echo "    <p>
 \t\t<a href=\"";
         // line 5
-        echo $this->env->getExtension('routing')->getPath("login", array("page" => "login"));
+        echo $this->env->getExtension('routing')->getPath("login");
         echo "\"> Login </a>
 \t</p>
 \t<p>
 \t\t<a href=\"";
         // line 8
-        echo $this->env->getExtension('routing')->getPath("signup", array("page" => "signup"));
+        echo $this->env->getExtension('routing')->getPath("signup");
         echo "\"> Sign Up! </a>
 \t</p>
 ";

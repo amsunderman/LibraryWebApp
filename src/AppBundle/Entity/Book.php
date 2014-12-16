@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Book
  *
- * @ORM\Table(name="books", indexes={@ORM\Index(name="ix_b_grp_bookid", columns={"Groupnumber", "Bookid"})})
+ * @ORM\Table(name="books")
  * @ORM\Entity
  */
 class Book
@@ -15,14 +15,14 @@ class Book
     /**
      * @var integer
      *
-     * @ORM\Id @ORM\Column(name="Groupnumber", type="integer", columnDefinition="INT(11) NOT NULL")
+     * @ORM\Id @ORM\Column(name="Groupnumber", type="integer")
      */
-    private $groupnumber;
+    private $Groupnumber;
 
     /**
      * @var integer
      *
-     * @ORM\Id @ORM\Column(name="Bookid", type="integer", columnDefinition="INT(11) NOT NULL AUTO_INCREMENT")
+     * @ORM\Id @ORM\Column(name="Bookid", type="integer")
      */
     private $bookid;
 
