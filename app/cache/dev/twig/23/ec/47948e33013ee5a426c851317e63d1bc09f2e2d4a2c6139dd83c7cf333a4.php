@@ -29,14 +29,16 @@ class __TwigTemplate_23ec47948e33013ee5a426c851317e63d1bc09f2e2d4a2c6139dd83c7cf
     {
         // line 4
         echo "
-\t<table border=\"1\">
+\t";
+        // line 6
+        echo "\t<table border=\"1\">
 \t<tr>
 \t\t<td>
 \t\t\tBook ID
 \t\t</td>
 \t\t<td>
 \t\t\t";
-        // line 11
+        // line 12
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["book"]) ? $context["book"] : $this->getContext($context, "book")), "getBookid", array(), "method"), "html", null, true);
         echo "
 \t\t</td>
@@ -47,7 +49,7 @@ class __TwigTemplate_23ec47948e33013ee5a426c851317e63d1bc09f2e2d4a2c6139dd83c7cf
 \t\t</td>
 \t\t<td>
 \t\t\t";
-        // line 19
+        // line 20
         echo twig_escape_filter($this->env, (isset($context["copyid"]) ? $context["copyid"] : $this->getContext($context, "copyid")), "html", null, true);
         echo "
 \t\t</td>
@@ -58,7 +60,7 @@ class __TwigTemplate_23ec47948e33013ee5a426c851317e63d1bc09f2e2d4a2c6139dd83c7cf
 \t\t</td>
 \t\t<td>
 \t\t\t";
-        // line 27
+        // line 28
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["book"]) ? $context["book"] : $this->getContext($context, "book")), "getBooktitle", array(), "method"), "html", null, true);
         echo "
 \t\t</td>
@@ -69,30 +71,36 @@ class __TwigTemplate_23ec47948e33013ee5a426c851317e63d1bc09f2e2d4a2c6139dd83c7cf
 \t\t</td>
 \t\t<td>
 \t\t\t";
-        // line 35
+        // line 36
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["book"]) ? $context["book"] : $this->getContext($context, "book")), "getAuthor", array(), "method"), "html", null, true);
         echo "
 \t\t</td>
 \t</tr>
 
 \t";
-        // line 39
+        // line 41
+        echo "\t";
         if ($this->getAttribute($this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "session", array()), "get", array(0 => "user"), "method"), "getLibrarian", array(), "method")) {
-            // line 40
+            // line 42
             echo "\t\t<a href=\"";
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("deleteBook", array("bookid" => $this->getAttribute((isset($context["book"]) ? $context["book"] : $this->getContext($context, "book")), "getBookid", array(), "method"))), "html", null, true);
             echo "\">
 \t\t\tDelete Book
 \t\t</a>
+
 \t";
+            // line 47
+            echo "\t";
         } else {
-            // line 44
+            // line 48
+            echo "\t\t";
+            // line 51
             echo "\t\t";
             if ((isset($context["loaned_out"]) ? $context["loaned_out"] : $this->getContext($context, "loaned_out"))) {
-                // line 45
+                // line 52
                 echo "\t\t\t";
                 if ((isset($context["loaned_out_by_me"]) ? $context["loaned_out_by_me"] : $this->getContext($context, "loaned_out_by_me"))) {
-                    // line 46
+                    // line 53
                     echo "\t\t\t\t<a href=\"";
                     echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("returnBook", array("copyid" => (isset($context["copyid"]) ? $context["copyid"] : $this->getContext($context, "copyid")))), "html", null, true);
                     echo "\">
@@ -100,14 +108,16 @@ class __TwigTemplate_23ec47948e33013ee5a426c851317e63d1bc09f2e2d4a2c6139dd83c7cf
 \t\t\t\t</a>
 \t\t\t";
                 } else {
-                    // line 50
+                    // line 57
                     echo "\t\t\t\tChecked Out
 \t\t\t";
                 }
-                // line 52
+                // line 59
+                echo "\t\t";
+                // line 60
                 echo "\t\t";
             } else {
-                // line 53
+                // line 61
                 echo "\t\t\t<a href=\"";
                 echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("checkoutBook", array("copyid" => (isset($context["copyid"]) ? $context["copyid"] : $this->getContext($context, "copyid")))), "html", null, true);
                 echo "\">
@@ -115,14 +125,16 @@ class __TwigTemplate_23ec47948e33013ee5a426c851317e63d1bc09f2e2d4a2c6139dd83c7cf
 \t\t\t</a>
 \t\t";
             }
-            // line 57
+            // line 65
             echo "\t";
         }
-        // line 58
+        // line 66
         echo "
 \t<br>
-\t<a href=\"";
-        // line 60
+
+\t";
+        // line 70
+        echo "\t<a href=\"";
         echo $this->env->getExtension('routing')->getPath("homepage");
         echo "\">Back to Library</a>
 
@@ -142,6 +154,6 @@ class __TwigTemplate_23ec47948e33013ee5a426c851317e63d1bc09f2e2d4a2c6139dd83c7cf
 
     public function getDebugInfo()
     {
-        return array (  126 => 60,  122 => 58,  119 => 57,  111 => 53,  108 => 52,  104 => 50,  96 => 46,  93 => 45,  90 => 44,  82 => 40,  80 => 39,  73 => 35,  62 => 27,  51 => 19,  40 => 11,  31 => 4,  28 => 3,);
+        return array (  137 => 70,  132 => 66,  129 => 65,  121 => 61,  118 => 60,  116 => 59,  112 => 57,  104 => 53,  101 => 52,  98 => 51,  96 => 48,  93 => 47,  85 => 42,  82 => 41,  75 => 36,  64 => 28,  53 => 20,  42 => 12,  34 => 6,  31 => 4,  28 => 3,);
     }
 }

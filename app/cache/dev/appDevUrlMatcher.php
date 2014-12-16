@@ -169,6 +169,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'AppBundle\\Controller\\LibraryController::checkoutBook',  '_route' => 'checkoutBook',);
         }
 
+        // returnBook
+        if ($pathinfo === '/returnBook') {
+            return array (  '_controller' => 'AppBundle\\Controller\\LibraryController::returnBook',  '_route' => 'returnBook',);
+        }
+
         // login
         if ($pathinfo === '/login') {
             return array (  '_controller' => 'AppBundle\\Controller\\UserController::login',  '_route' => 'login',);

@@ -140,7 +140,7 @@ class LibraryController extends Controller
        	{
        		//if returned on date is not null than the book has been returned
        		//and is no longer loaned out
-       		if($loan->getReturnedondate)
+       		if($loan->getReturnedondate())
        		{
        			$loaned_out = false;
        		}
@@ -148,7 +148,7 @@ class LibraryController extends Controller
        		{
        			//we know the book is loaned out
        			$loaned_out = true;
-       			if(strcmp($loan->getUsername(), $session.get('user').getUsername()) == 0)
+       			if(strcmp($loan->getUsername(), $session->get('user')->getUsername()) == 0)
        			{
        				//the book is loaned out by current user
        				$loaned_out_by_me = true;
@@ -276,6 +276,16 @@ class LibraryController extends Controller
        	//delete copies
        	foreach($bookscopy as $bookcopy)
        	{
+       		$loan = $this->getDoctrine()
+        		->getRepository('AppBundle:Loan')
+        		->findOneByCopyid($bookcopy->getCopyid());
+
+        	if($loan)
+        	{
+        		$em = $this->getDoctrine()->getManager();
+       			$em->remove($loan);
+       			$em->flush();
+        	}
        		$em = $this->getDoctrine()->getManager();
        		$em->remove($bookcopy);
        		$em->flush();
@@ -311,8 +321,84 @@ class LibraryController extends Controller
      */
     public function checkoutBook()
     {
+    	$session = new Session();
+
+    	//get url variable
     	$copyid = $_GET['copyid'];
-    	var_dump($copyid);
-    	exit;
+    	$username = $session->get('user')->getUsername();
+
+    	//gather date information for loan
+    	$date = date("Y-m-d");
+        $duedate = strtotime("+7 day", strtotime($date));
+        $duedatestring = date("Y-m-d", $duedate);
+
+        //get loan information for this copy
+        $loan = $this->getDoctrine()
+        	->getRepository('AppBundle:Loan')
+        	->findOneByCopyid($copyid);
+
+        //if no loan exists then create a new loan
+        if(!$loan)
+        {
+        	$loan = new Loan();
+        	$loan->setGroupnumber(31);
+        	$loan->setUsername($username);
+        	$loan->setCopyid($copyid);
+        	$loan->setDuedate($duedatestring);
+        	$loan->setReturnedondate(null);
+
+        	//get database manager
+	        $em = $this->getDoctrine()->getManager();
+
+	        //insert loan into database
+	        $em->persist($loan);
+	        $em->flush();
+        }
+        else
+        {
+        	$loan->setUsername($username);
+        	$loan->setDueDate($duedatestring);
+        	$loan->setReturnedondate(null);
+
+        	//get database manager
+	        $em = $this->getDoctrine()->getManager();
+
+	        //insert loan into database
+	        $em->persist($loan);
+	        $em->flush();
+        }
+
+        return $this->render('default/home.html.twig');
+    }
+
+    /**
+     * @Route("/returnBook", name="returnBook")
+     */
+    public function returnBook()
+    {
+    	$session = new Session();
+
+    	$copyid = $_GET['copyid'];
+
+    	//gather date information for loan
+    	$date = date("Y-m-d");
+        $duedate = strtotime("+7 day", strtotime($date));
+        $duedatestring = date("Y-m-d", $duedate);
+
+        //get loan information for this copy
+        $loan = $this->getDoctrine()
+        	->getRepository('AppBundle:Loan')
+        	->findOneByCopyid($copyid);
+
+        $loan->setReturnedondate($date);
+
+        //get database manager
+        $em = $this->getDoctrine()->getManager();
+
+        //insert loan into database
+        $em->persist($loan);
+        $em->flush();
+
+    	return $this->render('default/home.html.twig');
     }
 }

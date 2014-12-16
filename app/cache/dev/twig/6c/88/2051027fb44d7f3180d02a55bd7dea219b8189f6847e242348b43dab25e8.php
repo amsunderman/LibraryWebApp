@@ -30,15 +30,19 @@ class __TwigTemplate_6c882051027fb44d7f3180d02a55bd7dea219b8189f6847e242348b43da
         // line 4
         echo "    <p>
     \t";
-        // line 5
+        // line 6
+        echo "    \t";
         if (array_key_exists("error", $context)) {
-            // line 6
+            // line 7
             echo "    \t\t<p class=\"error_message\">";
             echo twig_escape_filter($this->env, (isset($context["error"]) ? $context["error"] : $this->getContext($context, "error")), "html", null, true);
             echo "</p>
     \t";
         }
-        // line 8
+        // line 9
+        echo "
+    \t";
+        // line 11
         echo "\t\t<form name=\"login_attempt\" action=\"";
         echo $this->env->getExtension('routing')->getPath("login_validate");
         echo "\" method=\"post\">
@@ -62,6 +66,6 @@ class __TwigTemplate_6c882051027fb44d7f3180d02a55bd7dea219b8189f6847e242348b43da
 
     public function getDebugInfo()
     {
-        return array (  42 => 8,  36 => 6,  34 => 5,  31 => 4,  28 => 3,);
+        return array (  46 => 11,  43 => 9,  37 => 7,  34 => 6,  31 => 4,  28 => 3,);
     }
 }

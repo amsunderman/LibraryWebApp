@@ -34,18 +34,18 @@ class Loan
     private $copyid;
 
     /**
-     * @var \DateTime
+     * @var string
      *
-     * @ORM\Column(name="Duedate", type="date")
+     * @ORM\Column(name="Duedate", type="string", length=30)
      */
     private $duedate;
 
     /**
-     * @var \DateTime
+     * @var string
      *
-     * @ORM\Column(name="Returnedondate", type="date")
+     * @ORM\Column(name="Returnedondate", type="string", length=30, nullable=true)
      */
-    private $returnedondate;
+    private $returnedondate = null;
 
     /**
      * Set groupnumber
