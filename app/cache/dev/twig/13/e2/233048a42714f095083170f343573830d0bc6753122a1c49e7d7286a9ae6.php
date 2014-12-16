@@ -28,15 +28,20 @@ class __TwigTemplate_13e2233048a42714f095083170f343573830d0bc6753122a1c49e7d7286
     public function block_body($context, array $blocks = array())
     {
         // line 5
-        echo "    <p>
-\t\t<a href=\"";
-        // line 6
+        echo "<br/>
+<br/>
+\t<div class=\"col-md-4\">
+\t</div>
+\t<div class=\"col-md-4 centered\">
+    <p>
+\t\t<a class=\"btn btn-default\" href=\"";
+        // line 11
         echo $this->env->getExtension('routing')->getPath("login");
         echo "\"> Login </a>
 \t</p>
 \t<p>
-\t\t<a href=\"";
-        // line 9
+\t\t<a class=\"btn btn-default\" href=\"";
+        // line 14
         echo $this->env->getExtension('routing')->getPath("signup");
         echo "\"> Sign Up! </a>
 \t</p>
@@ -55,6 +60,6 @@ class __TwigTemplate_13e2233048a42714f095083170f343573830d0bc6753122a1c49e7d7286
 
     public function getDebugInfo()
     {
-        return array (  40 => 9,  34 => 6,  31 => 5,  28 => 4,);
+        return array (  45 => 14,  39 => 11,  31 => 5,  28 => 4,);
     }
 }

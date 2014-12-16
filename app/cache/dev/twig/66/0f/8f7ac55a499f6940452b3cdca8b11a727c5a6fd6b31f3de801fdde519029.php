@@ -51,48 +51,57 @@ class __TwigTemplate_660f8f7ac55a499f6940452b3cdca8b11a727c5a6fd6b31f3de801fdde5
         ";
         // line 16
         echo "        <div class = \"jumbotron\">
-            <h1>Library Web App</h1>
-            ";
-        // line 18
+\t\t\t<div class=\"row\">
+                <div class=\"col-md-4\">
+                </div>
+                <div class=\"col-md-4 centered\">
+                    <img id=\"logo\" src=\"";
+        // line 21
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("images/logo.png"), "html", null, true);
+        echo "\" style=\"width:25em; padding-top:3em\" />
+                </div>
+\t\t\t\t";
+        // line 23
         if ($this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "session", array()), "has", array(0 => "user"), "method")) {
-            // line 19
-            echo "                <p class=\"user_info\">
-                    ";
-            // line 20
+            // line 24
+            echo "\t\t\t\t\t<div class=\"col-md-4 centered\">
+\t\t\t\t\t\t";
+            // line 25
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "session", array()), "get", array(0 => "user"), "method"), "getUsername", array(), "method"), "html", null, true);
             echo "
-                    ";
-            // line 21
-            if ($this->getAttribute($this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "session", array()), "get", array(0 => "user"), "method"), "getLibrarian", array(), "method")) {
-                // line 22
-                echo "                         (librarian)
-                    ";
-            } else {
-                // line 24
-                echo "                         (student)
-                    ";
-            }
+\t\t\t\t\t\t";
             // line 26
-            echo "                </p>
-                <p class=\"user_info\">
-                    <a href=\"";
-            // line 28
+            if ($this->getAttribute($this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "session", array()), "get", array(0 => "user"), "method"), "getLibrarian", array(), "method")) {
+                // line 27
+                echo "\t\t\t\t\t\t\t (librarian)
+\t\t\t\t\t\t";
+            } else {
+                // line 29
+                echo "\t\t\t\t\t\t\t (student)
+\t\t\t\t\t\t";
+            }
+            // line 30
+            echo "<br/>
+                        <a class=\"headerLink\" href=\"";
+            // line 31
             echo $this->env->getExtension('routing')->getPath("logout");
             echo "\">logout</a>
-                </p>
-            ";
+\t\t\t\t\t</div>
+\t\t\t\t\t
+\t\t\t\t";
         }
-        // line 31
-        echo "        </div>
+        // line 35
+        echo "            </div>
+        </div>
 
         ";
-        // line 34
+        // line 39
         echo "        ";
         $this->displayBlock('body', $context, $blocks);
-        // line 35
+        // line 40
         echo "        ";
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 36
+        // line 41
         echo "    </body>
 </html>
 ";
@@ -109,12 +118,12 @@ class __TwigTemplate_660f8f7ac55a499f6940452b3cdca8b11a727c5a6fd6b31f3de801fdde5
     {
     }
 
-    // line 34
+    // line 39
     public function block_body($context, array $blocks = array())
     {
     }
 
-    // line 35
+    // line 40
     public function block_javascripts($context, array $blocks = array())
     {
     }
@@ -131,6 +140,6 @@ class __TwigTemplate_660f8f7ac55a499f6940452b3cdca8b11a727c5a6fd6b31f3de801fdde5
 
     public function getDebugInfo()
     {
-        return array (  118 => 35,  113 => 34,  108 => 11,  102 => 5,  96 => 36,  93 => 35,  90 => 34,  86 => 31,  80 => 28,  76 => 26,  72 => 24,  68 => 22,  66 => 21,  62 => 20,  59 => 19,  57 => 18,  53 => 16,  46 => 12,  44 => 11,  39 => 9,  34 => 8,  29 => 5,  23 => 1,);
+        return array (  127 => 40,  122 => 39,  117 => 11,  111 => 5,  105 => 41,  102 => 40,  99 => 39,  94 => 35,  87 => 31,  84 => 30,  80 => 29,  76 => 27,  74 => 26,  70 => 25,  67 => 24,  65 => 23,  60 => 21,  53 => 16,  46 => 12,  44 => 11,  39 => 9,  34 => 8,  29 => 5,  23 => 1,);
     }
 }

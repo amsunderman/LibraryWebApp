@@ -1,0 +1,107 @@
+.btn-primary{
+	background-color: rgb(204, 204, 204);
+	color: black;
+	border-color: rgb(150, 150, 150);
+}
+
+.btn-primary:hover{
+	background-color: rgb(150, 150, 150);
+	border-color: rgb(150, 150, 150);
+}
+
+.btn-primary.active{
+	background-color: rgb(150, 150, 150);
+	border-color: rgb(150, 150, 150);
+}
+
+
+body{
+	font-family:Verdana;
+}
+
+.jumbotron{
+	background-color: rgb(163, 0, 14);
+	color: white;
+	margin: 0;
+    padding: 1.25em 1.5em;
+}
+
+a{
+	color: #428bca;
+}
+
+a:hover{
+	color: #428bca;
+}
+
+input{
+	color: #000;
+}
+
+/* navbar */
+.navbar{
+	border-radius: 0;
+	margin: 0;
+	opacity: .95;
+	border-style: solid;
+	border-width: .2em 0;
+	border-color: #000;
+	background-color: rgb(200, 0, 14);
+	color: white;
+	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(transparent), to(rgba(0, 0, 0, 0.278431)));
+    z-index: 10;
+}
+.navbar > .container-fluid{
+	padding-left: 0;
+}
+
+.navbar > .container-fluid > .navbar-collapse{
+	padding-right: 0;
+	padding-left: 0;
+}
+
+.navbar-default .navbar-nav > li > a{
+	border-right: 1px solid black;
+}
+
+.navbar-default .navbar-right > li > a{
+	border-left: 1px solid black;
+	border-right: none;
+}
+
+.navbar-default .navbar-nav > li > a {
+	color:white;
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+	color: #000;
+	background-color: rgb(163, 0, 14);
+}
+
+.navbar-default .navbar-text{
+	color: rgb(255, 200, 200);
+}
+
+#nav.affix {
+    position: fixed;
+    top: 0;
+    right: -6em;
+    z-index: 10;
+    margin-left: 6em;
+    margin-right: 6em;
+    width: 100%;
+}
+
+.pagination > li > a, .pagination > li > a:hover{
+    color: red;
+}
+
+.pagination > .active > span:hover{
+    background-color: rgb(150, 0, 0);
+    border-color: rgb(150, 0, 0);
+}
+
+.pagination > .active > span{
+    background-color: red;
+    border-color: red;
+}

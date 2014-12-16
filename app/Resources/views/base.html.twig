@@ -14,20 +14,25 @@
     <body>
         {# library web app banner #}
         <div class = "jumbotron">
-            <h1>Library Web App</h1>
-            {% if app.session.has('user') %}
-                <p class="user_info">
-                    {{app.session.get('user').getUsername()}}
-                    {% if app.session.get('user').getLibrarian() %}
-                         (librarian)
-                    {% else %}
-                         (student)
-                    {% endif %}
-                </p>
-                <p class="user_info">
-                    <a href="{{path('logout')}}">logout</a>
-                </p>
-            {% endif %}
+			<div class="row">
+                <div class="col-md-4">
+                </div>
+                <div class="col-md-4 centered">
+                    <img id="logo" src="{{asset('images/logo.png')}}" style="width:25em; padding-top:3em" />
+                </div>
+				{% if app.session.has('user') %}
+					<div class="col-md-4 centered">
+						{{app.session.get('user').getUsername()}}
+						{% if app.session.get('user').getLibrarian() %}
+							 (librarian)
+						{% else %}
+							 (student)
+						{% endif %}<br/>
+                        <a class="headerLink" href="{{path('logout')}}">logout</a>
+					</div>
+					
+				{% endif %}
+            </div>
         </div>
 
         {# body (this twig is extended) #}

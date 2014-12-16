@@ -26,7 +26,7 @@ class __TwigTemplate_8c4ecebce1604c6b93a6e226f7c7eb098f5047087145cc4b3db74dde8c9
         echo "
     ";
         // line 4
-        echo "\t<table border=\"1\">
+        echo "\t<table class=\"table\">
 \t<tr>
 \t\t";
         // line 6
@@ -109,18 +109,41 @@ class __TwigTemplate_8c4ecebce1604c6b93a6e226f7c7eb098f5047087145cc4b3db74dde8c9
         echo "    ";
         if ($this->getAttribute($this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "session", array()), "get", array(0 => "user"), "method"), "getLibrarian", array(), "method")) {
             // line 34
-            echo "    \t<form name=\"addbook\" action=\"";
+            echo "        <div class=\"col-md-4\">
+        </div>
+        <div class=\"col-md-4 centered\">
+            <br/>
+        \t<form name=\"addbook\" action=\"";
+            // line 38
             echo $this->env->getExtension('routing')->getPath("addBook");
             echo "\" method=\"post\">
-\t\t\tBook ID: <input type=\"text\" name=\"bookid\"><br>
-\t\t\tBook Name: <input type=\"text\" name=\"name\"><br>
-\t\t\tBook Author: <input type=\"text\" name=\"author\"><br>
-\t\t\tNumber Copies: <input type=\"text\" name=\"numcopies\"><br>
-\t\t\t<input type=\"submit\" value=\"Add Book\">
-\t\t</form>
+                <div class=\"input-group detail\">
+                    <span class=\"input-group-addon\">Book ID</span>
+                    <input type=\"text\" class=\"form-control\" name=\"bookid\"><br>
+                </div>
+                <br/>
+                <div class=\"input-group detail\">
+                    <span class=\"input-group-addon\">Book Name</span>
+                    <input type=\"text\" class=\"form-control\" name=\"name\"><br>
+                </div>
+                <br/>
+                <div class=\"input-group detail\">
+                    <span class=\"input-group-addon\">Book Author</span>
+                    <input type=\"text\" class=\"form-control\" name=\"author\"><br>
+                </div>
+                <br/>
+                <div class=\"input-group detail\">
+                    <span class=\"input-group-addon\">Number of Copies</span>
+                    <input type=\"text\" class=\"form-control\" name=\"numcopies\"><br>
+                </div>
+                <br/>
+
+    \t\t\t<input type=\"submit\" class=\"btn btn-default\" value=\"Add Book\">
+    \t\t</form>
+        </div>
     ";
         }
-        // line 42
+        // line 64
         echo "
 ";
     }
@@ -132,6 +155,6 @@ class __TwigTemplate_8c4ecebce1604c6b93a6e226f7c7eb098f5047087145cc4b3db74dde8c9
 
     public function getDebugInfo()
     {
-        return array (  124 => 42,  112 => 34,  109 => 33,  106 => 31,  99 => 29,  92 => 27,  88 => 25,  82 => 22,  78 => 21,  73 => 20,  71 => 19,  68 => 18,  64 => 17,  61 => 16,  56 => 15,  53 => 13,  50 => 12,  46 => 9,  37 => 7,  33 => 6,  29 => 4,  26 => 2,  20 => 1,);
+        return array (  147 => 64,  118 => 38,  112 => 34,  109 => 33,  106 => 31,  99 => 29,  92 => 27,  88 => 25,  82 => 22,  78 => 21,  73 => 20,  71 => 19,  68 => 18,  64 => 17,  61 => 16,  56 => 15,  53 => 13,  50 => 12,  46 => 9,  37 => 7,  33 => 6,  29 => 4,  26 => 2,  20 => 1,);
     }
 }

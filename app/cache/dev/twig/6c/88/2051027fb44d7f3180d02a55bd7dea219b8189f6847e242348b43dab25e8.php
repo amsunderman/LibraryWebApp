@@ -28,29 +28,41 @@ class __TwigTemplate_6c882051027fb44d7f3180d02a55bd7dea219b8189f6847e242348b43da
     public function block_body($context, array $blocks = array())
     {
         // line 4
-        echo "    <p>
-    \t";
-        // line 6
-        echo "    \t";
+        echo "
+\t<br/>
+\t";
+        // line 7
+        echo "\t";
         if (array_key_exists("error", $context)) {
-            // line 7
-            echo "    \t\t<p class=\"error_message\">";
+            // line 8
+            echo "\t\t<p class=\"error_message\">";
             echo twig_escape_filter($this->env, (isset($context["error"]) ? $context["error"] : $this->getContext($context, "error")), "html", null, true);
             echo "</p>
-    \t";
+\t";
         }
-        // line 9
+        // line 10
         echo "
-    \t";
-        // line 11
-        echo "\t\t<form name=\"login_attempt\" action=\"";
+\t";
+        // line 12
+        echo "\t<form name=\"login_attempt\" action=\"";
         echo $this->env->getExtension('routing')->getPath("login_validate");
-        echo "\" method=\"post\">
-\t\t\tUsername: <input type=\"text\" name=\"username\"><br>
-\t\t\tPassword: <input type=\"password\" name=\"password\"><br>
-\t\t\t<input type=\"submit\" value=\"Login\">
-\t\t</form>
-\t</p>
+        echo "\" method=\"post\">\t\t
+\t\t<div class=\"col-md-4\">
+\t\t</div>
+\t\t<div class=\"col-md-4 centered\">
+\t\t\t<div class=\"input-group detail\">
+\t\t\t\t<span class=\"input-group-addon\">Username</span>
+\t\t\t\t<input type=\"text\" class=\"form-control\" name=\"username\"><br>
+\t\t\t</div>
+\t\t\t<br/>
+\t\t\t<div class=\"input-group detail\">
+\t\t\t\t<span class=\"input-group-addon\">Password</span>
+\t\t\t\t<input class=\"form-control\" type=\"password\" name=\"password\"><br>
+\t\t\t</div>
+\t\t\t<br/>
+\t\t\t<input class=\"btn btn-default\" type=\"submit\" value=\"Login\">
+\t\t</div>
+\t</form>
 ";
     }
 
@@ -66,6 +78,6 @@ class __TwigTemplate_6c882051027fb44d7f3180d02a55bd7dea219b8189f6847e242348b43da
 
     public function getDebugInfo()
     {
-        return array (  46 => 11,  43 => 9,  37 => 7,  34 => 6,  31 => 4,  28 => 3,);
+        return array (  47 => 12,  44 => 10,  38 => 8,  35 => 7,  31 => 4,  28 => 3,);
     }
 }

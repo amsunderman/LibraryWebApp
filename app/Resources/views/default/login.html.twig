@@ -2,11 +2,16 @@
 
 {# links to login or sign up #}
 {% block body %}
+<br/>
+<br/>
+	<div class="col-md-4">
+	</div>
+	<div class="col-md-4 centered">
     <p>
-		<a href="{{ path('login') }}"> Login </a>
+		<a class="btn btn-default" href="{{ path('login') }}"> Login </a>
 	</p>
 	<p>
-		<a href="{{ path('signup')}}"> Sign Up! </a>
+		<a class="btn btn-default" href="{{ path('signup')}}"> Sign Up! </a>
 	</p>
 {% endblock %}
 

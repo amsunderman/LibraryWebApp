@@ -3,7 +3,8 @@
 {% block body %}
 
 	{# Book Details #}
-	<table border="1">
+	<div class="col-md-6">
+	<table class="table" border="1">
 	<tr>
 		<td>
 			Book ID
@@ -36,7 +37,8 @@
 			{{book.getAuthor()}}
 		</td>
 	</tr>
-
+	</div>
+	<div class="col-md-4">
 	{# if user is a librarian, they have option to delete book #}
 	{% if app.session.get('user').getLibrarian() %}
 		<a href="{{path('deleteBook', {'bookid': book.getBookid()})}}">
@@ -59,15 +61,14 @@
 		{# If the book is available, the student will be able to checkout the book #}
 		{% else %}
 			<a href="{{path('checkoutBook', {'copyid': copyid})}}">
-				Burrow Book
+				Borrow Book
 			</a>
 		{% endif %}
 	{% endif %}
-
 	<br>
 
 	{# link to go back to the library #}
 	<a href="{{path('homepage')}}">Back to Library</a>
-
+	</div>
 
 {% endblock %}
